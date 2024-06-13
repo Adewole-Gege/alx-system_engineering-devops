@@ -1,0 +1,1 @@
+Script to run for path of current directory
