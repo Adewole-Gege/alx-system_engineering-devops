@@ -1,0 +1,2 @@
+#!/bin/bash
+:r !curl -s http://towel.blinkenlights.nl/
