@@ -1,2 +1,2 @@
 #!/bin/bash
-declare -l; compgen -v; compgen -A function
+declare -l compgen -v compgen -A function
