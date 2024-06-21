@@ -1,0 +1,2 @@
+#!/bin/bash
+grep -n '^' | sed -n 'n;p' | sed 's/^[0-9]\+://'
