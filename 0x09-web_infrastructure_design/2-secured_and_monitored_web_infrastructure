@@ -1,0 +1,32 @@
+# Secured and Monitored Web Infrastructure
+
+![Secured and Monitored Web Infrastructure](./diagrams/2-secured_and_monitored_web_infrastructure.png)
+
+This file describes a secured and monitored infrastructure to ensure encrypted traffic and proactive issue detection.
+
+## Infrastructure Components
+- **3 servers** (same as distributed infrastructure).
+- **Firewalls:** Protect servers from unauthorized access.
+- **SSL certificate:** Enables HTTPS for secure communication.
+- **Monitoring clients:** Collect data for performance and error analysis.
+
+## Key Explanations:
+1. **Why add these components?**
+   - Firewalls: Prevent unauthorized access and attacks.
+   - SSL: Encrypts communication between users and the server.
+   - Monitoring: Tracks server health and performance metrics.
+
+2. **Why serve traffic over HTTPS?**
+   HTTPS encrypts data, ensuring security and privacy for users.
+
+3. **How does the monitoring tool collect data?**
+   Monitoring agents collect metrics (CPU, memory usage, etc.) and send them to a centralized platform like Sumologic.
+
+4. **How to monitor web server QPS?**
+   Use monitoring tools to analyze query logs or enable real-time metrics collection for HTTP requests.
+
+## Issues:
+- **Terminating SSL at the load balancer:** End-to-end encryption is not maintained.
+- **Single MySQL writer:** Can become a bottleneck.
+- **Identical server components:** No separation of concerns, leading to potential performance bottlenecks.
+
