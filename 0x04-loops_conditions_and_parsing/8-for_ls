@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+# This script displays the contents of the current directory in a modified list format
+
+for file in *; do
+  [[ -f "$file" ]] && echo "${file#*-}"
+done
