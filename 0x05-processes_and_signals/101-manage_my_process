@@ -1,0 +1,29 @@
+#!/usr/bin/env bash
+# Init script to start, stop, or restart manage_my_process
+
+pid_file="/var/run/my_process.pid"
+
+case "$1" in
+    start)
+        ./manage_my_process &
+        echo $! > "$pid_file"
+        echo "manage_my_process started"
+        ;;
+    stop)
+        if [ -f "$pid_file" ]; then
+            kill "$(cat "$pid_file")" && rm -f "$pid_file"
+            echo "manage_my_process stopped"
+        fi
+        ;;
+    restart)
+        if [ -f "$pid_file" ]; then
+            kill "$(cat "$pid_file")" && rm -f "$pid_file"
+        fi
+        ./manage_my_process &
+        echo $! > "$pid_file"
+        echo "manage_my_process restarted"
+        ;;
+    *)
+        echo "Usage: manage_my_process {start|stop|restart}"
+        ;;
+esac

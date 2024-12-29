@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+# Script that displays lines containing "bash" to locate Bash processes
+
+# shellcheck disable=SC2009
+ps aux | grep bash
