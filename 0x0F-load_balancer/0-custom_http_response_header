@@ -1,0 +1,18 @@
+#!/usr/bin/env bash
+# Configures a new Ubuntu machine to serve a custom HTTP header with Nginx
+
+# Update and install Nginx
+apt-get update -y
+apt-get install -y nginx
+
+# Allow HTTP traffic through the firewall
+ufw allow 'Nginx HTTP'
+
+# Add a custom HTTP header to Nginx configuration
+sed -i '/server_name _;/a \\tadd_header X-Served-By \"$hostname\";' /etc/nginx/sites-available/default
+
+# Create a default index.html
+echo "Hello World!" > /var/www/html/index.html
+
+# Restart Nginx to apply changes
+nginx -t && service nginx restart
