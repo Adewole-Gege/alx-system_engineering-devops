@@ -1,0 +1,21 @@
+#!/usr/bin/env bash
+# Script to create a MySQL backup and compress it
+
+PASSWORD="$1"
+BACKUP_DIR="/var/backups/mysql"
+DATE=$(date +%d-%m-%Y)
+BACKUP_FILE="$BACKUP_DIR/$DATE.tar.gz"
+
+# Ensure backup directory exists
+mkdir -p "$BACKUP_DIR"
+
+# Dump all MySQL databases
+mysqldump -u root -p"$PASSWORD" --all-databases > /tmp/backup.sql
+
+# Compress the backup file
+tar -czvf "$BACKUP_FILE" /tmp/backup.sql
+
+# Remove temporary backup file
+rm /tmp/backup.sql
+
+echo "Backup saved to $BACKUP_FILE"
