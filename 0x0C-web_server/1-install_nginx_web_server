@@ -1,15 +1,18 @@
 #!/usr/bin/env bash
 # Installs and configures Nginx to serve "Hello World!" at the root URL
 
+# Exit immediately if a command exits with a non-zero status
+set -e
+
 # Update package list and install Nginx
 apt-get update -y
 apt-get install -y nginx
 
 # Allow HTTP traffic through the firewall
-sudo ufw allow 'Nginx HTTP'
+ufw allow 80/tcp || true
 
 # Create an HTML file with "Hello World!" content
 echo "Hello World!" > /var/www/html/index.html
 
 # Restart Nginx to apply changes
-service nginx restart
+nginx -s reload
