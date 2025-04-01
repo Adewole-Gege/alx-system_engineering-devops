@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+# This script fixes the issue by installing Apache and creating a simple HTML page
+
+# Update package list and install Apache
+apt-get update
+apt-get install -y apache2
+
+# Create a simple HTML page with "Hello ALX"
+echo "Hello ALX" > /var/www/html/index.html
+
+# Start Apache service
+service apache2 start
