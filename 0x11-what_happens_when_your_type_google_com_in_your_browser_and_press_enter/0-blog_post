@@ -1,0 +1,15 @@
+### Blog Post Summary
+
+**Title:** What Happens When You Type `https://www.google.com` in Your Browser and Press Enter?
+
+**Summary:**
+This blog post explains the comple`te journey of a URL request, covering key topics such as DNS resolution, TCP/IP communication, SSL encryption, firewall security, load balancing, web server processing, application server execution, and database interactions. It provides an in-depth look into how the internet and web infrastructure work seamlessly to deliver a webpage within milliseconds.
+
+**Read the full article here:**
+https://www.linkedin.com/posts/adewolegege_activity-7315020264457613312-sAvE?utm_source=share&utm_medium=member_desktop&rcm=ACoAADDNxj8B0nBotVhcKbvS4jiIK-8Ra1_AQfY
+
+
+### Repository Details
+- **GitHub Repository:** alx-system_engineering-devops
+- **Directory:** 0x11-what_happens_when_your_type_google_com_in_your_browser_and_press_enter
+- **File:** 0-blog_post
